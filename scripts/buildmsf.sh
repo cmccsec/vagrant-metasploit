@@ -115,6 +115,7 @@ setup_msf ()
 { 
   rvm install $(cat $MSF_PATH/.ruby-version) --auto-dotfiles
   cd $3
+  gem install bundler
   rvmsudo bundle install
   for MSF in $(ls msf*); do
     echo "#!/usr/bin/env bash" > /usr/local/sbin/$MSF
